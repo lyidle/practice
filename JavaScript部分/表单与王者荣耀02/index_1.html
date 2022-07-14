@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index_1.css">
+</head>
+<body>
+    <div class="max">
+        <h3>增加快递信息</h3>
+        <form action="post" method="post" name="post">
+            <fieldset class="send">
+                <legend>发货单</legend>
+                <div>
+                    <div>
+                        <span>发货人:</span>
+                        <input type="text" name="发货人" id="">
+                    </div>
+                    <div>
+                        <span>地址:</span>
+                        <input type="text" name="地址" id="">
+                    </div>
+                    <div>
+                        <span>电话:</span>
+                        <input type="text" name="电话" id="">
+                    </div>
+                    <div>
+                        <span>邮编:</span>
+                        <input type="text" name="邮编" id="">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="income">
+                <legend>收货单</legend>
+                <div>
+                    <div>
+                        <span>收货人:</span>
+                        <input type="text" name="收货人" id="">
+                    </div>
+                    <div>
+                        <span>地址:</span>
+                        <input type="text" name="地址" id="">
+                    </div>
+                    <div>
+                        <span>电话:</span>
+                        <input type="text" name="电话" id="">
+                    </div>
+                    <div>
+                        <span>邮编:</span>
+                        <input type="text" name="邮编" id="">
+                    </div>
+                </div>
+                <div>
+                    <span>地区:</span>
+                    <select name="地区" id="">
+                        <option value="北京">北京</option>
+                        <option value="重庆">重庆</option>
+                        <option value="四川">四川</option>
+                        <option value="成都">成都</option>
+                    </select>
+                </div>
+                <div>
+                    <span>包装:</span>
+                    <label for="carton">
+                        <input type="checkbox" name="纸箱" id="carton">
+                        纸箱
+                    </label>
+                    <label for="wooden_box">
+                        <input type="checkbox" name="木箱" id="wooden_box">
+                        木箱
+                    </label>
+                    <label for="courier_bag">
+                        <input type="checkbox" name="快递袋" id="courier_bag">
+                        快递袋
+                    </label>
+                    <label for="else">
+                        <input type="checkbox" name="其他" id="else">
+                        其他
+                    </label>
+                </div>
+                <div>
+                    <span>付款方式:</span>
+                    <label for="cash">
+                        <input type="radio" name="pay" id="cash">
+                        现金
+                    </label>
+                    <label for="alipay">
+                        <input type="radio" name="pay" id="alipay">
+                        支付宝
+                    </label>
+                    <label for="internetbank">
+                        <input type="radio" name="pay" id="internetbank">
+                        网银
+                    </label>
+                    <label for="atm">
+                        <input type="radio" name="pay" id="atm">
+                        ATM
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset class="message">
+                <legend>货物信息</legend>
+                    <div>
+                        <span>货物名称:</span>
+                        <input type="text" name="货物名称" id=""></div>
+                    <span>数量:</span>
+                    <input type="text" name="数量" id="">
+                    <span>重量:</span>
+                    <input type="text" name="重量" id="">
+                    <span>发货时间:</span>
+                    <input type="text" name="发货时间" id="">
+            </fieldset>
+            <div class="button">
+                <input type="submit" name="" id="" value="确定">
+                <input type="reset" name="" id="" value="取消">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

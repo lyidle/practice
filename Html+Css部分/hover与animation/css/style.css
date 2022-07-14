@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+    display: flex;
+    margin:100px auto;
+    width: 1050px;
+    position: relative;
+}
+li{
+    width: 200px;
+    /* 开启弹性盒子 */
+    display: flex;
+    /* 竖向排列 */
+    flex-direction: column;
+    /* 右边距 */
+    margin-right: 10px;
+    /* 和内容的边距 */
+    padding: 5px;
+    /* 怪异盒子 */
+    box-sizing: border-box;
+    /* 边框 */
+    border: 1px solid rgb(196,159,96);
+    /* 过渡 */
+    transition: .5s;
+    /* 相对定位 */
+    position: relative;
+    top: 0;
+}
+li>div:first-child{
+    width: 100%;
+    /* 上方盒子高度 */
+    height: 150px;
+    /* 开启弹性盒子 */
+    display: flex;
+    /* 水平居中分布 */
+    justify-content: center;
+    /* 垂直靠顶部 */
+    align-items: flex-start;
+    /* 顶部与内容的距离 */
+    padding-top: 25px;
+    /* 怪异盒子 */
+    box-sizing: border-box;
+}
+li>div>span{
+    /* 文字竖向排列 */
+    writing-mode:vertical-lr;
+}
+li>div>span:last-child{
+    /* 平安无语等字体大小 */
+    font-size: 25px;
+}
+img{
+    width: 100%;
+}
+/* 上边框颜色 */
+li:nth-child(1){
+    border-top: 5px solid rgb(150,127,72);
+    color: rgb(150,127,72);
+}
+li:nth-child(2){
+    border-top: 5px solid rgb(175,106,104);
+    color: rgb(175,106,104);
+}
+li:nth-child(3){
+    border-top: 5px solid rgb(207,169,114);
+    color: rgb(207,169,114);
+}
+li:nth-child(4){
+    border-top: 5px solid rgb(141,162,109);
+    color: rgb(141,162,109);
+}
+li:nth-child(5){
+    border-top: 5px solid rgb(91,126,145);
+    color: rgb(91,126,145);
+}
+/* 悬浮动画 */
+li:hover{
+    top: -20px;
+}
+.animation_{
+    width: 190px;
+    height: 240px;
+    background-color: rgba(250, 235, 215, 0.221);
+    /* 位置 */
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* 隐藏溢出 */
+    overflow: hidden;
+}
+.animation_>img{
+    width: auto;
+    height: 100%;
+    position: relative;
+    right: 0px;
+    /* 动画 */
+    animation: step 1s steps(8) infinite;
+}
+/* 自定义动画 */
+@keyframes step {
+    100% {
+        right: 1360px;
+    }
+}

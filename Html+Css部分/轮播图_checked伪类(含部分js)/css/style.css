@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置大盒子的宽度还有居中 */
+.max_box {
+    width: 1330px;
+    margin: 70px auto;
+}
+
+/* 单选按钮的父级靠左排列和设置高度，图片占满 */
+.max_box>div {
+    height: 600px;
+    float: left;
+    background-size: cover;
+}
+
+/* 给单选按钮的父级设置图片 */
+.box_1 {
+    background-image: url(../images/1.jpg);
+}
+
+.box_2 {
+    background-image: url(../images/2.jpg);
+}
+
+.box_3 {
+    background-image: url(../images/3.jpg);
+}
+
+.box_4 {
+    background-image: url(../images/4.jpg);
+}
+
+.box_5 {
+    background-image: url(../images/5.jpg);
+}
+
+/* 隐藏按钮，按钮大小为父级大小 */
+.cked {
+    width: 100px;
+    height: 100%;
+    opacity: 0;
+    /* 默认宽度100px */
+    transition: width 1s;
+}
+
+/* 点击改变单选按钮的大小 */
+.cked:checked {
+    width: 900px;
+}
+/* 实现背景图片的效果 */
+.big_img{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    /* 大小为窗口大小 */
+    top: 0;
+    left: 0;
+    /* 靠左上角 */
+    z-index: -1;
+    /* 层级最低，在轮播图下面 */
+    opacity: 0;
+    /* 默认全部隐藏 */
+    transition: opacity 1s;
+}
+/* 默认显示第一张背景 */
+.only_img{
+    opacity: 1;
+    transition:opacity 1s ;
+}
+/* 点击切换图片 */
+.cked:checked+.big_img{
+    opacity: 1;
+}
+/* 默认第一张图为展开 */
+.only{
+    width: 900px;
+    transition:width 0s ;
+}

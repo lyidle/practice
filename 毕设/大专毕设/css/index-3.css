@@ -1,0 +1,118 @@
+.content {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255, 240, 222, 0.8);
+}
+.top_content,
+.left,
+.bottom_content,
+.center_ > div {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  background-color: rgb(252, 225, 192);
+  border-top: rgb(255, 175, 122) solid 10px;
+}
+.left,
+.right {
+  width: 20%;
+}
+.center_ {
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.center_ > div:nth-last-child(1) {
+  margin-top: 10px;
+}
+.top_content {
+  margin-bottom: 20px;
+}
+.li_center li {
+  display: flex;
+  justify-content: space-between;
+}
+.top_content li,
+.li_center li {
+  background: url("../images/收藏.png") no-repeat;
+  background-size: 10px;
+  padding-left: 13px;
+  background-position-y: 10px;
+}
+.li_center > li {
+  border-bottom: 1px dashed;
+}
+.left li {
+  background: url("../images/成功.png") no-repeat;
+  background-size: 20px;
+  padding-left: 24px;
+  background-position-y: center;
+}
+.just_title {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid rgb(255, 175, 122);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.just_title img {
+  width: 30px;
+  height: 30px;
+}
+.just_title h5 {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+/*  */
+.project_ {
+  display: flex;
+  justify-content: space-between;
+}
+.project_ img {
+  cursor: pointer;
+  width: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: 1s;
+}
+.project_ > img:hover {
+  transform: rotateY(180deg);
+}
+.project_ img:nth-child(2) {
+  width: 60px;
+}
+.bottom_content_2 {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1111px) {
+  .center_,
+  .content {
+    display: block;
+  }
+  .left,
+  .right,
+  .center_ {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .project_ {
+    justify-content: center;
+  }
+  .project_ img {
+    margin-left: 20%;
+  }
+  .project_ img:nth-child(1) {
+    margin-left: 0;
+  }
+}
+.top_content li,
+.bottom_content li {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}

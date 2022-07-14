@@ -1,0 +1,86 @@
+.card button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: rgb(175, 29, 29);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.card button:hover {
+  background-color: rgb(212, 78, 78);
+}
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.show > .btn-outline-primary.dropdown-toggle {
+  background-color: rgb(214, 79, 79);
+  box-shadow: none;
+}
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-outline-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 10px 1px rgb(255, 179, 179);
+  background-color: rgb(189, 52, 52);
+}
+.btn-outline-primary:focus {
+  box-shadow: 0 0 10px 1px rgb(255, 179, 179);
+  background-color: rgb(189, 52, 52);
+  border: none;
+}
+
+/*  */
+.card_ {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+.rota {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  transition: 1s;
+}
+.rota img {
+  width: 50%;
+}
+.card > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 10px;
+  box-shadow: 10px 10px 10px 5px #fce9d0;
+}
+.rota:hover {
+  transform: rotateY(180deg);
+}
+.banner > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  background-color: #9c2622;
+}
+.banner > div > div {
+  color: white;
+}
+.banner h3 {
+  color: white;
+}
+.card_ {
+  margin-bottom: 40px;
+}

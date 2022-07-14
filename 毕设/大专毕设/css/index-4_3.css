@@ -1,0 +1,90 @@
+body {
+  background-color: #ffd3a0;
+}
+.title {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  margin-bottom: 100px;
+}
+.title img {
+  width: 100px;
+  margin-left: 10px;
+}
+.title h3 {
+  margin: 0;
+}
+.title div {
+  color: rgb(255, 255, 255);
+}
+h5 span {
+  border: 1px solid white;
+  padding-left: 25px;
+  margin-right: 20px;
+}
+h5 {
+  width: fit-content;
+}
+.text {
+  position: relative;
+  position: absolute;
+  top: -50px;
+}
+.text div {
+  position: absolute;
+  top: 5px;
+  right: -40px;
+  width: 10px;
+  height: 10px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 28px solid rgb(156, 38, 34);
+}
+.images {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.images > div {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 20px;
+  position: relative;
+}
+.images img {
+  width: 100%;
+}
+.images_ > div {
+  width: 30%;
+}
+.susp {
+  width: 0;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(218, 142, 0, 0.274);
+}
+.images > div:hover .susp {
+  width: 100%;
+  height: 100%;
+}
+.susp .text {
+  position: relative;
+  top: 0;
+}
+.susp h5,
+.susp span,
+.susp .text div {
+  color: white;
+  border-top-color: white;
+  transition: 0.5s;
+}
+@media screen and (max-width: 770px) {
+  .susp > .text div {
+    opacity: 0;
+  }
+}

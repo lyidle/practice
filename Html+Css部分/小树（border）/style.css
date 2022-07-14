@@ -1,0 +1,43 @@
+.box {
+    width: 300px;
+    margin: 50px auto;
+}
+
+.leaf01 {
+    width: 0px;
+    margin: auto;
+    border: transparent solid 50px;
+    border-bottom-color: #38fb02;
+    margin-bottom: -120px;
+}
+
+.leaf02 {
+    width: 0px;
+    margin: auto;
+    border: transparent solid 100px;
+    border-bottom-color: #3ff079;
+    margin-bottom: -180px;
+}
+.leaf03 {
+    width: 0px;
+    margin: auto;
+    border: transparent solid 150px;
+    border-bottom-color: #1a7622;
+}
+.leaf04{
+    width: 35px;
+    height: 220px;
+    margin: auto;
+    background-color: #31cd39;
+    margin-bottom: -60px;
+}
+.leaf05{
+    width: 220px;
+    height: 50px;
+    margin: auto;
+    background-color: #c4f6ff79;
+    border: 10px solid #b25c58;
+    border-top: 44px solid #8affff69;
+    border-bottom-width: 44px;
+
+}

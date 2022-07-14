@@ -1,0 +1,219 @@
+/* 轮播图 */
+.roll {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: 1s;
+}
+.roll:hover .button {
+  width: 100%;
+  margin-left: 0;
+  transition: 1s;
+}
+/* 视频 */
+video {
+  display: block;
+  width: 30%;
+}
+.video_ {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+/* 加上第一张一样的一共五张图张图片 */
+.images {
+  width: 500%;
+  display: flex;
+  position: relative;
+}
+/* 图片 */
+/* 1229px*500px */
+.roll_img,
+.roll_img img {
+  width: 100%;
+}
+/* 图片居中 */
+.roll_img {
+  display: flex;
+  align-items: center;
+}
+/* 底部按钮弹性布局 */
+.bottom_buts {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  z-index: 10;
+  bottom: 0;
+  right: 30px;
+}
+/* 底部按钮 */
+.bottom_but {
+  width: 20px;
+  height: 20px;
+  border-radius: 10%;
+  margin-left: 20px;
+  background-color: #ffc08d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cc6119;
+  transition: 1s;
+  cursor: pointer;
+}
+/* 按钮悬浮样式 */
+.on {
+  transition: 1s;
+  width: 100px;
+  background-color: #ffc08d;
+}
+/* 左右按钮弹性布局 */
+.button {
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  margin-left: -50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 1s;
+  top: 0;
+}
+/* 左右按钮 */
+.button-left,
+.button-right {
+  font-size: 50px;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  color: rgb(196, 39, 0, 0.5);
+  cursor: pointer;
+  background-color: rgb(255, 192, 141, 0.8);
+}
+/* 更改卡片样式 */
+@media (min-width: 1010px) {
+  .card-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+  .card-group > .card {
+    margin: 40px;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1010px) {
+  .card-group > .card {
+    display: block;
+  }
+  .card_ {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .card_ > .card_body {
+    padding-top: 65px;
+    margin: 0;
+  }
+  .video_ {
+    display: block;
+  }
+  .video_ > video:nth-child(1) {
+    margin-top: 0;
+  }
+  video {
+    width: 90%;
+    margin: auto;
+    margin-top: 65px;
+  }
+}
+.card {
+  margin: 40px;
+  margin-top: 0;
+}
+.card-body {
+  background-color: rgba(148, 148, 148, 0.1);
+  text-align: justify;
+}
+.card-footer {
+  height: 50px;
+  margin-top: 15px;
+}
+.new .card:hover .card-body {
+  box-shadow: 5px 5px 15px rgba(255, 205, 139, 0.5);
+}
+.card-body {
+  background-color: rgba(255, 201, 139, 0.5);
+}
+.text-right {
+  position: relative;
+  top: -30px;
+}
+.card_ .btn {
+  position: relative;
+  z-index: 10;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 15px;
+}
+/* 守望故事图片 */
+.card_body {
+  width: 100%;
+}
+.card_body .card-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: -40px;
+  height: 40px;
+  font-size: 15px;
+  color: white;
+  padding-left: 15px;
+  background-color: rgba(189, 69, 13, 0.7);
+  transition: 0.8s;
+  opacity: 0;
+}
+.card_footer:hover .card-title {
+  opacity: 1;
+}
+.card_ {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.card_ .card_body {
+  width: 100%;
+}
+.card_body {
+  margin-right: 40px;
+}
+.card_ > div:nth-last-child(1) {
+  margin-right: 0;
+}
+.card_ p {
+  color: rgb(156, 38, 34);
+}
+/* 巨幅初始化 */
+.card-group {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.tz_top {
+  margin-top: -50px;
+}
+.jumbotron-fluid {
+  color: #b34100;
+}

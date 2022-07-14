@@ -1,0 +1,85 @@
+body {
+    /* 清除默认的margin */
+    margin: 0;
+}
+
+/* 多数一样的设置样式 */
+.box th,
+.box td {
+    width: 250px;
+    height: 100px;
+    box-sizing: border-box;
+    border-right: 1px solid #930;
+    border-bottom: 1px solid #930;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 图片 */
+.box .goods img {
+    height: 70px;
+}
+
+/* 表格样式 */
+.box {
+    margin: 50px auto;
+    border-top: 1px solid #930;
+    box-sizing: border-box;
+    /* 线条粗细不一致 */
+    border-collapse: collapse;
+    font-size: 16px;
+    user-select: none;
+}
+
+/* 表头和表底 */
+.box thead th,
+.box tfoot td {
+    height: 50px;
+    background-color: #c36;
+    color: #fff;
+    font-size: 14px;
+}
+/* 表头和表身 */
+.box tbody,.box thead{
+    box-sizing: border-box;
+    border-left: .5px solid #930;
+}
+/* 所有tr开启弹性 */
+.box tr{
+    display: flex;
+
+}
+/* 底部 */
+.box tfoot td{
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+.totalNum,.totalPrice{
+    color: #f4e5a9;
+    text-indent: 1em;
+    padding-right: 5px;
+}
+.goodsNum{
+    color: #c36;
+    font-size: 12px;
+    width: 50px;
+    height: 30px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add,.remove{
+    font-size: 14px;
+    background-color: #eee;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

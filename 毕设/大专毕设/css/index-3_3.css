@@ -1,0 +1,33 @@
+.banner img {
+  padding: 40px;
+}
+.banner {
+  background-color: #fce1c0;
+}
+.banner h3 {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.content h3 {
+  text-align: center;
+  margin-top: 40px;
+}
+.content > div {
+  text-indent: 2em;
+  padding-left: 20px;
+  text-align: justify;
+}
+.content h5 {
+  text-indent: 2em;
+}
+.content ul {
+  padding-left: 80px;
+}
+.content li {
+  margin-top: 5px;
+}
+.content h4 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

@@ -1,0 +1,313 @@
+body {
+  margin: 0;
+  background-color: #eee;
+}
+.max_box {
+  width: 1400px;
+  margin: 100px auto;
+  display: flex;
+}
+.max_box .left {
+  margin-right: 20px;
+}
+.max_box .right {
+  margin-left: 20px;
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  30% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+@keyframes move {
+  0% {
+    right: 0;
+  }
+  20% {
+    right: -5px;
+  }
+  30% {
+    right: 0px;
+  }
+  40% {
+    right: -5px;
+  }
+  70% {
+    right: 0px;
+  }
+}
+.left {
+  width: 820px;
+}
+.left .title {
+  position: relative;
+}
+.left .title > div {
+  width: 670px;
+  display: inline-block;
+  border-bottom: 1px solid #e0e2e2;
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+.left .title > div > div {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+.left .title > div > div:hover .more-arrow {
+  position: relative;
+  animation: move linear infinite 1s;
+}
+.left .title > div > div:hover a {
+  text-decoration: underline;
+  color: #1da6ba;
+  font-weight: 700;
+}
+.left .title > div span {
+  font-size: 12px;
+  color: #7ea1a6;
+}
+.left .title h2 {
+  font-size: 24px;
+  display: inline-block;
+  color: #0b0b0b;
+  vertical-align: middle;
+}
+.left .title h2::before {
+  content: '';
+  width: 4px;
+  height: 30px;
+  display: inline-block;
+  background-color: #1da6ba;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.left .title ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.left .title ul li {
+  display: inline-block;
+  margin-right: 30px;
+}
+.left .title ul li a {
+  font-size: 16px;
+  color: #676767;
+}
+.left .title .title_left_on::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 7px;
+  background: url('../images/title.png') center center;
+}
+.left .switch {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.left .switch a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.left .switch ul {
+  display: none;
+  justify-content: space-between;
+}
+.left .switch ul li {
+  display: block;
+  height: 278px;
+  width: 193px;
+  background-color: #fefefe;
+  position: relative;
+  transition: transform 0.2s;
+}
+.left .switch ul li a > div:nth-child(2) {
+  color: #424242;
+  font-size: 14px;
+  padding: 6px 10px;
+}
+.left .switch ul li a > div:nth-child(3) {
+  color: #1da6ba;
+  font-size: 12px;
+  position: absolute;
+  bottom: 6px;
+  left: 10px;
+}
+.left .switch ul li a > div {
+  position: relative;
+  overflow: hidden;
+}
+.left .switch ul li .move {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url('../images/dark70-bg-repeat.png');
+  padding: 10px;
+  box-sizing: border-box;
+  display: block;
+  transform: translateY(0%);
+  transition: transform 0.2s;
+}
+.left .switch ul li .move div {
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/comm-spr.png');
+  background-size: 376px 195px;
+  background-position: -3px -2px;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.left .switch ul li .move h4 {
+  color: #cdbe91;
+  font-size: 16px;
+  font-weight: 400;
+}
+.left .switch ul li .move p {
+  color: #9d9c9c;
+  font-size: 12px;
+}
+.left .switch ul li:hover {
+  transform: translateY(-10px);
+}
+.left .switch ul li:hover .move {
+  transform: translateY(-100%);
+}
+.right {
+  width: 496px;
+  height: 335px;
+}
+.right div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+}
+.right div:nth-child(1) video {
+  transition: filter 0.5s;
+}
+.right div:nth-child(1) video:hover {
+  filter: brightness(1.15);
+}
+.right div:nth-child(1) ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.right div:nth-child(1) ul li {
+  width: 118px;
+  height: 78px;
+  text-align: center;
+  line-height: 78px;
+  background-image: url('../images/index-spr.png');
+  background-position: 445px 258px;
+  font-size: 14px;
+  position: relative;
+  transition: filter 0.5s;
+}
+.right div:nth-child(1) ul li:nth-child(2) {
+  margin-bottom: 4px;
+}
+.right div:nth-child(1) ul li > a {
+  color: #fff;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+}
+.right div:nth-child(1) ul li .necessary {
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+.right div:nth-child(1) ul li .necessary:nth-last-child(1) {
+  left: auto;
+  right: 0;
+  border-left: 1px solid #eee;
+}
+.right div:nth-child(1) ul li .necessary > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #424242;
+  font-size: 12px;
+}
+.right div:nth-child(1) ul li .necessary .nece_icon {
+  width: 20px;
+  height: 22px;
+  position: relative;
+  top: 20px;
+  background-image: url('../images/comm-spr.png');
+  background-position: 149px 127px;
+}
+.right div:nth-child(1) ul li .necessary:nth-child(3) .nece_icon {
+  background-position: 109px 100px;
+}
+.right div:nth-child(1) ul li:nth-child(2):hover {
+  filter: brightness(1.15);
+}
+.right div:nth-child(1) ul li:nth-child(1):hover .necessary {
+  display: block;
+}
+.right div:nth-child(1) ul li:nth-child(1):hover .necessary:hover a {
+  color: #0da0b4;
+}
+.right div:nth-child(1) ul li:nth-child(1):hover .necessary:hover .nece_icon {
+  animation: scale linear 1s;
+}
+.right .bottom {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: -4px;
+}
+.right .bottom li {
+  width: 112px;
+  height: 68px;
+  text-align: center;
+  line-height: 68px;
+  background-color: #fefefe;
+  margin-top: 15px;
+  transition: box-shadow 0.2s;
+}
+.right .bottom li:hover {
+  box-shadow: 0 0 10px #ccc;
+}
+.right .bottom li:hover i[class^='icon'] {
+  animation: scale linear 1s;
+}
+.right .bottom li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: #424242;
+  position: relative;
+}
+.right .bottom li .icon-new-1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

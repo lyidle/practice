@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+:root {
+    --list-width: 234px;
+    --list-margin: 14px;
+    --sort-width:70px;
+    --sort-left:-15px;
+}
+
+.wrap {
+    /* 去掉小圆点 */
+    list-style: none;
+    /* 默认右padding值 */
+    padding: 0;
+    /* 弹性盒子  换行 */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    /* 禁止选种 */
+    user-select: none;
+    /* 宽度是list的4倍  加上  边距四个  加上sort模块的距离*/
+    width: calc(var(--list-width) * 4 + var(--list-margin) * 4 + var(--sort-width));
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+}
+/* 图片 */
+.wrap>li img {
+    height: 160px;
+    width: 160px;
+    margin-bottom: 18px;
+    
+}
+/* 里面的盒子 */
+.list {
+    width: var(--list-width);
+    height: 300px;
+    background-color: #fff;
+    margin-left: var(--list-margin);
+    margin-bottom: var(--list-margin);
+    /* 保证宽度和高度不变  不计算border和padding  margin要计算 */
+    box-sizing: border-box;
+    /* 内边距 */
+    padding: 20px 10px;
+}
+/* 标题 */
+.title{
+    margin-bottom: 2px;
+    height: 21px;
+}
+/* 小标题 */
+.mintitle{
+    color: #b0b0b0;
+    font-size: 12px;
+    margin-bottom: 10px;
+    height: 18px;
+}
+/* 价格 */
+.maxprice{
+    color: #ff7600;
+}
+/* 划掉的价格 */
+.delprice{
+    color: #b0b0b0;
+    /* 半个字的距离 */
+    padding-left: .5em;
+}
+/* 排序 */
+.sort{
+    position: absolute;
+    right: var(--sort-left);
+    background-color: #f5f5f5;
+    width: var(--sort-width);
+}
+.sort>div{
+    background-color: #FFF;
+    margin-bottom: 10px;
+    height: 30px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 156, 70);
+    border-radius: 5px;
+}
+/* 悬浮 */
+.list,.sort>div{
+    transition: transform .3s,box-shadow .3s;
+    cursor: pointer;
+}
+.wrap>li:hover,.sort>div:hover{
+    box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+    transform: translate3d(0,-2px,0);
+}
+.list>*{
+    /* 隐藏 */
+    overflow: hidden;
+    /* 超出的省略号 */
+    text-overflow: ellipsis;
+    /* 不换行 */
+    white-space: nowrap;
+}

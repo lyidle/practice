@@ -1,0 +1,71 @@
+body{
+    /* 默认带margin */
+    margin: 0;
+}
+.max-roll{
+    /* 轮播大小，可以换成和js执行轮播时传入的类名*/
+    width: 100%;
+    position: relative;
+    /* 禁止选中 */
+    -webkit-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+.roll-img{
+    /* 六张图片
+    width: calc(100%*6); */
+    /* 横向排列 */
+    display: flex;
+    position: relative;
+    left: 0;
+}
+/* 左右的按钮 */
+.roll-btn-left,.roll-btn-right{
+    position: absolute;
+    /* 按钮居中显示  目前看着没居中是因为父级呗撑开了 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 50px;
+    color: #fff;
+    background-color: #ffcda5a3;
+    /* 内容居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+/* 右边按钮 */
+.roll-btn-right{
+    right: 0;
+}
+/* 底部按钮 */
+.roll-toggle{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    /* 靠右边显示 */
+    justify-content: flex-end;
+}
+.roll-toggle>div{
+    width: 20px;
+    height: 18px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #cc6119;
+    background-color: #ffc08dea;
+    display: flex;
+    /* 内容居中显示 */
+    justify-content: center;
+    align-items: center;
+    transition: width 1s;
+    cursor: pointer;
+}
+.roll-toggle>div.only{
+    /* 激活显示按钮 */
+    width: 80px;
+}

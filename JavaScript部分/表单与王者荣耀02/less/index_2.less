@@ -1,0 +1,351 @@
+body{
+    margin: 0;
+    background-color: #eee;
+}
+.max_box{
+    width: 1400px;
+    margin:100px auto;
+    display: flex;
+    .left{
+        margin-right: 20px;
+    }
+    .right{
+        margin-left: 20px;
+    }
+}
+// 放大动画
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.2);
+    }
+    30%{
+        transform: scale(1);
+    }
+    40%{
+        transform: scale(1.2);
+    }
+    70%{
+        transform: scale(1);
+    }
+}
+// 左右移动动画
+@keyframes move {
+    0%{
+        right: 0;
+    }
+    20%{
+        right: -5px;
+    }
+    30%{
+        right: 0px;
+    }
+    40%{
+        right: -5px;
+    }
+    70%{
+        right: 0px;
+    }
+}
+// 左边内容
+.left{
+    width: 820px;
+    // 标题
+    .title{
+        position: relative;
+        &>div{
+            width: 670px;
+            display: inline-block;
+            border-bottom: 1px solid #e0e2e2 ;
+            position: absolute;
+            right: 0;
+            top: 5px;
+            // 更多整体
+            &>div{
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                // 更多悬浮效果
+                &:hover{
+                    .more-arrow{
+                        position: relative;
+                        animation: move linear infinite 1s;
+                    }
+                    a{
+                        text-decoration: underline;
+                        color: #1da6ba;
+                        font-weight: 700;
+                    }
+                }
+            }
+            // 更多
+            span{
+                font-size: 12px;
+                color: #7ea1a6;
+            }
+        }
+        // 热门活动
+        h2{
+            font-size: 24px;
+            display: inline-block;
+            color: #0b0b0b;
+            vertical-align: middle;
+            // 绿色竖线
+            &::before{
+                content: '';
+                width: 4px;
+                height: 30px;
+                display: inline-block;
+                background-color: #1da6ba;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+        }
+        ul{
+            // 标题
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            vertical-align: middle;
+            li{
+                display: inline-block;
+                margin-right: 30px;
+                a{
+                    font-size: 16px;
+                    color: #676767;
+                }
+            }
+        }
+        // 绿色下划线
+        .title_left_on::after{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 7px;
+                background: url('../images/title.png') center center;
+        }
+    }
+    // 热门活动模块
+    .switch{
+        margin-top: 20px;
+        margin-left: 10px;
+        a{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        ul{
+            display: none;
+            justify-content: space-between;
+            li{
+                display: block;
+                height: 278px;
+                width: 193px;
+                background-color: #fefefe;
+                position: relative;
+                transition: transform .2s;
+                // 小标题
+                a>div:nth-child(2){
+                    color: #424242;
+                    font-size: 14px;
+                    padding:6px 10px;
+                }
+                // 底部绿字
+                a>div:nth-child(3){
+                    color: #1da6ba;
+                    font-size: 12px;
+                    position: absolute;
+                    bottom: 6px;
+                    left: 10px;
+                }
+                a>div{
+                    position: relative;
+                    overflow: hidden;
+                }
+                // 活动蒙版
+                .move{
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    background-image: url('../images/dark70-bg-repeat.png');
+                    padding: 10px;
+                    box-sizing: border-box;
+                    display: block;
+                    transform: translateY(0%);
+                    transition:transform .2s;
+                    div{
+                        width: 100%;
+                        height: 100%;
+                        background-image: url('../images/comm-spr.png');
+                        background-size: 376px 195px;
+                        background-position: -3px -2px;
+                        padding: 5px;
+                        box-sizing: border-box;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        text-align: center;
+                    }
+                    // 第一行
+                    h4{
+                        color: #cdbe91;
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                    // 剩下两行
+                    p{
+                        color: #9d9c9c;
+                        font-size: 12px;
+                    }
+                }
+                &:hover{
+                    .move{
+                        transform: translateY(-100%);
+                    }
+                    transform: translateY(-10px);
+                }
+            }
+        }
+    }
+}
+.right{
+    width: 496px;
+    height: 335px;
+    // title
+    div:nth-child(1){
+        display: flex;
+        justify-content: space-between;
+        // 悬浮滤镜
+        video{
+            transition: filter .5s;
+        }
+        video:hover{
+            filter:brightness(1.15);
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            li{
+                width: 118px;
+                height: 78px;
+                text-align: center;
+                line-height: 78px;
+                background-image: url('../images/index-spr.png');
+                background-position: 445px 258px;
+                font-size: 14px;
+                position: relative;
+                transition: filter .5s;
+                // 第二个微调
+                &:nth-child(2){
+                    margin-bottom: 4px;
+                }
+                &>a{
+                    color: #fff;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    font-weight: 700;
+                }
+                // 选中状态
+                .necessary{
+                    display: none;
+                    position: absolute;
+                    width: 50%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: #fff;
+                    // 中间的线
+                    &:nth-last-child(1){
+                        left: auto;
+                        right: 0;
+                        border-left: 1px solid #eee;
+                    }
+                    &>a{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        color: #424242;
+                        font-size: 12px;
+                    }
+                    // 图标
+                    .nece_icon{
+                        width: 20px;
+                        height: 22px;
+                        position: relative;
+                        top: 20px;
+                        background-image: url('../images/comm-spr.png');
+                        background-position: 149px 127px;
+                    }
+                    &:nth-child(3){
+                        .nece_icon{
+                            background-position: 109px 100px;
+                        }
+                    }
+                }
+                // 悬浮滤镜
+                &:nth-child(2):hover{
+                    filter: brightness(1.15);
+                }
+                // 悬浮出现
+                &:nth-child(1):hover{
+                    .necessary{
+                        display: block;
+                        // 悬浮动画
+                        &:hover {
+                            a{
+                                color: #0da0b4;
+                            }
+                            .nece_icon{
+                                animation: scale linear 1s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 底部
+    .bottom{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: -4px;
+        li{
+            width: 112px;
+            height: 68px;
+            text-align: center;
+            line-height: 68px;
+            background-color: #fefefe;
+            margin-top: 15px;
+            transition: box-shadow .2s;
+            // 悬浮阴影
+            &:hover{
+                box-shadow: 0 0 10px #ccc;
+                // 悬浮放大动画
+                i[class^='icon']{
+                    animation: scale linear 1s;
+                }
+            }
+            a{
+                display: block;
+                height: 100%;
+                width: 100%;
+                color: #424242;
+                position: relative;
+            }
+            // 图标
+            .icon-new-1{
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+}

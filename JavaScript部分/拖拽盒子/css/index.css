@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+}
+:root{
+    --wrap-border:10px;
+}
+/* 盒子样式 */
+.wrap {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #606DB7;
+}
+/* 圆点样式可以一起设置 */
+.dot{
+    width: 25px;
+    height: 25px;
+    background-color: #E6A99A;
+    border-radius: 50%;
+    /* 都在左上角了 */
+    position: absolute;
+    /* 防止边界遮挡圆点设置层级 */
+    z-index: 5;
+}
+/* 第二个圆点 */
+.dot:nth-child(2){
+    right: 0;
+    background-color: #99BBE8;
+}
+/* 三、四都靠下 */
+/* 从第三个开始 */
+.dot:nth-child(n+3){
+    bottom: 0;
+    background-color: #7DCF69;
+}
+/* 右边 last-child选不到是因为不是最后一个div*/
+.dot:nth-child(3){
+    right: 0;
+    background-color: #D38EE8
+}
+/* 边界统一设置左右边界覆盖即可 */
+.list:nth-child(n+5){
+    width: 100%;
+    height: var(--wrap-border);
+    opacity: 0;
+    position: absolute;
+    cursor: ns-resize;
+}
+/* 下 */
+.list:nth-child(6){
+    bottom: 0;
+}
+/* 左右统一设置 右边覆盖即可 */
+.list:nth-child(n+7){
+    height: 100%;
+    width: var(--wrap-border);
+    cursor: ew-resize;
+}
+/* 最后一个右边 */
+.list:last-child{
+    right: 0;
+}
+/* 鼠标样式 */
+/* 一三圆点 */
+.dot:nth-child(1),.dot:nth-child(3){
+    cursor: nwse-resize;
+}
+/* 二四圆点 */
+.dot:nth-child(2),.dot:nth-child(4){
+    cursor: nesw-resize;
+}

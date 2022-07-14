@@ -1,0 +1,62 @@
+body {
+    background-image: url(../images/bg.webp);
+}
+
+.max {
+    width: 880px;
+    margin: 200px auto;
+}
+
+.max>div {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+    margin-right: 20px;
+}
+
+img {
+    position: relative;
+    right: 0px;
+    animation-name: steps;
+    animation-duration: 1s;
+    animation-timing-function: steps(8);
+    animation-iteration-count: infinite;
+}
+
+@keyframes steps {
+    100% {
+        right: 1600px;
+    }
+}
+
+/* 唐僧和白龙马 */
+.max>.box_2 {
+    width: 190px;
+    height: 190px;
+}
+
+.box_2>img {
+    animation-name: step_2;
+}
+
+@keyframes step_2 {
+    100% {
+        right: 1360px;
+    }
+}
+/* 沙僧 */
+.max>.box_3 {
+    width: 190px;
+    height: 190px;
+}
+
+.box_3>img {
+    animation-name: step_3;
+}
+
+@keyframes step_3 {
+    100% {
+        right: 1680px;
+    }
+}

@@ -1,0 +1,127 @@
+body{
+    margin: 0;
+    background-color: #eeeeee;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 616px;//(150+2+2)*4
+    margin:200px auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+li{
+    display: flex;
+    width: 150px;
+    height: 80px;
+    margin: 2px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &::before{
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-image: url('../img/15-12.png');
+        }
+    }
+    // 图标
+    &:hover{
+        // 放大缩小
+        div::before{
+            animation: scale 1s linear;
+        }
+    }
+    // 放大动画
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.2);
+    }
+    30%{
+        transform: scale(1);
+    }
+    40%{
+        transform: scale(1.2);
+    }
+    70%{
+        transform: scale(1);
+    }
+}
+    // 第一排
+    &:nth-child(1) div{
+        &::before{
+            background-position: 0 (-160px - 40 * 0);
+        }
+    }
+    &:nth-child(2) div{
+        &::before{
+            background-position: 0 (-160px - 40 * 1);
+        }
+    }
+    &:nth-child(3) div{
+        &::before{
+            background-position: 0 (-160px - 40 * 2);
+        }
+    }
+    &:nth-child(4) div{
+        &::before{
+            background-position: 0 (-160px - 40 * 3);
+        }
+    }
+
+    // 第二排
+    &:nth-child(5) div{
+        &::before{
+            background-position: 0 (-160px - 40 * 4);
+        }
+    }
+    &:nth-child(6) div{
+        &::before{
+            background-position: 0 (-160px - 40 * 5);
+        }
+    }
+    &:nth-child(7) div{
+        &::before{
+            background-position: 0 (-160px - 40 * 6);
+        }
+    }
+    &:nth-child(8) div{
+        &::before{
+            background-position: 0 (-160px - 40 * 7);
+        }
+    }
+
+    // 第三排
+    &:nth-child(9) div{
+        &::before{
+            background-position: 0 (-40px * 0);
+        }
+    }
+    &:nth-child(10) div{
+        &::before{
+            background-position: 0 (-40px * 1);
+        }
+    }
+    &:nth-child(11) div{
+        &::before{
+            background-position: 0 (-40px * 2);
+        }
+    }
+    &:nth-child(12) div{
+        &::before{
+            background-position: 0 (-40px * 3);
+        }
+    }
+}

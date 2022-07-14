@@ -1,0 +1,164 @@
+.indent {
+  text-indent: 2em;
+}
+.content {
+  overflow: visible;
+}
+.cont_2 {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  height: 580px;
+  margin: auto;
+}
+.right {
+  width: 50%;
+  border-left: 1px solid black;
+  text-align: justify;
+  padding-left: 20px;
+  overflow: hidden;
+}
+.left {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  right: 20px;
+}
+.left img {
+  height: 100%;
+  z-index: 5;
+}
+.left > div {
+  width: 100%;
+  position: relative;
+  margin-left: 30px;
+}
+.left .img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 15px;
+  right: 20px;
+}
+.left .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(241, 163, 17, 0.329);
+  z-index: 1;
+}
+
+.cont_1 button {
+  width: 70px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: rgb(175, 29, 29);
+  color: white;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cont_1 button:hover {
+  background-color: rgb(212, 78, 78);
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.show > .btn-outline-primary.dropdown-toggle {
+  background-color: rgb(214, 79, 79);
+  box-shadow: none;
+}
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-outline-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 10px 3px rgb(189, 52, 52);
+  background-color: rgb(189, 52, 52);
+}
+
+.btn-outline-primary:focus {
+  box-shadow: 0 0 10px 3px rgb(189, 52, 52);
+  background-color: rgb(189, 52, 52);
+  border: none;
+}
+
+.cont_1 {
+  width: 80%;
+  height: 230px;
+  overflow: hidden;
+  margin: auto;
+  background-color: #ffdcb47a;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  transition: 0.5s;
+}
+
+.content {
+  z-index: 5;
+  margin-top: -130px;
+}
+.cont_1 > img {
+  position: absolute;
+  width: 30px;
+  top: 10px;
+  left: 10px;
+}
+.card_ {
+  width: 90%;
+  height: 80%;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  transition: 0.5s;
+}
+.card button {
+  position: absolute;
+  bottom: 0;
+}
+.card img {
+  width: 50%;
+  margin-top: 20px;
+}
+.card img {
+  cursor: pointer;
+}
+@media screen and (min-width: 1380px) {
+  .left {
+    margin-left: 30px;
+    width: 45%;
+  }
+}
+@media screen and (max-width: 1015px) {
+  .cont_1 {
+    height: 210px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .cont_1 {
+    height: 180px;
+  }
+  .card div {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .cont_1 {
+    height: 160px;
+  }
+}

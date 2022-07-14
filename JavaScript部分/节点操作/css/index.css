@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+}
+
+:root {
+    --menu-width: 200px;
+    --menu-height: 300px;
+    --menu-bordius: 10px;
+    --menu-padding: 10px;
+    --menu-fontszize: 12px;
+    --menu-button-rigMargin: 10px;
+    --menu-bottom-margin: 10px;
+    --menu-color: rgb(84, 104, 165);
+    /* 激活按钮 */
+    --menu-button-active-color: #fff;
+    --menu-button-background: rgb(155, 172, 231);
+    --menu-right-background: rgb(89, 116, 214);
+    /* 按钮鼠标样式 */
+    --menu-button-curosr: pointer;
+    --menu-text-padding: 8px;
+    /* scroll */
+    --menu-scroll-width: 10px;
+    --menu-scroll-main-background: rgb(195, 212, 243);
+    --menu-scroll-button: rgb(237, 243, 255);
+    --menu-scroll-button-height: 8px;
+    --menu-scroll-thumb: rgb(89, 138, 230);
+}
+
+.menu {
+    /* 宽度是小盒子的两倍也就是；两个盒子的宽度 */
+    width: calc(var(--menu-width) * 2);
+    height: calc(var(--menu-height) + 46px);
+    position: relative;
+    display: flex;
+    margin: 50px auto;
+    color: var(--menu-color);
+    /* 禁止文本被选中 */
+    user-select: none;
+}
+
+/* 前两个div设置样式 */
+.menu>div:nth-child(-n+2) {
+    width: var(--menu-width);
+    height: var(--menu-height);
+    background-color: rgb(141, 160, 212);
+    padding: var(--menu-padding);
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+/* 左边背景单独设置 */
+.menu-left {
+    background-color: rgb(214, 223, 248) !important;
+}
+
+/* 最里面的div的样式设置 */
+.menu>div>div {
+    background-color: rgb(234, 239, 255);
+    margin-bottom: var(--menu-bottom-margin);
+    border-radius: calc(var(--menu-bordius) / 2);
+    padding: calc(var(--menu-padding) / 2) var(--menu-text-padding);
+    font-size: var(--menu-fontszize);
+    box-sizing: border-box;
+    cursor: var(--menu-button-curosr);
+}
+
+/* 按钮和input绝对定位到底部 */
+.menu-button,
+.menu-text {
+    position: absolute;
+    bottom: 0;
+}
+
+/* 按钮flex */
+.menu-button {
+    display: flex;
+
+}
+
+.menu-button>div {
+    margin-right: var(--menu-button-rigMargin);
+    cursor: var(--menu-button-curosr);
+}
+
+/* 右边按钮 */
+.menu-right-button {
+    right: 0;
+}
+
+/* 输入框 */
+.menu-text {
+    width: 80px;
+    height: 26px;
+    box-sizing: border-box;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--menu-padding);
+    padding-left: var(--menu-text-padding);
+    outline: none;
+    border-color: #fff;
+    font-size: var(--menu-fontszize);
+    color: var(--menu-color);
+    background-color: #fff;
+    margin-bottom: var(--menu-bottom-margin);
+    box-shadow: 0 0 5px 0px rgb(193 208 255) inset;
+    transition: box-shadow .3s, background-color .3s;
+}
+
+/* 文本框获得焦点 */
+.menu-text:focus {
+    background-color: rgb(235, 240, 255);
+    box-shadow: 0 0 5px 0px rgb(175, 190, 238) inset;
+}
+
+/* 统一的样式 */
+.menu>div:nth-child(-n+2)>div.active {
+    background-color: var(--menu-button-background);
+    color: var(--menu-button-active-color);
+}
+
+/* 右边不一样 */
+.menu-right>div.active {
+    background-color: var(--menu-right-background) !important;
+}
+
+/* 底部按钮 */
+.menu-button>div:active {
+    background-color: var(--menu-button-background);
+    color: var(--menu-button-active-color);
+}
+
+/* 过渡 */
+.menu>div:nth-child(-n+2)>div,
+.menu-button>div {
+    transition: background-color .3s, color .3s;
+}
+
+/* 背景 */
+.menu>div:nth-child(-n+2)::-webkit-scrollbar {
+    width: var(--menu-scroll-width);
+    background-color: rgb(195, 212, 243);
+}
+
+/* 上下按钮 */
+.menu>div:nth-child(-n+2)::-webkit-scrollbar-button {
+    height: var(--menu-scroll-button-height);
+    background-color: var(--menu-scroll-button);
+}
+
+/* 滚动条 */
+.menu>div:nth-child(-n+2)::-webkit-scrollbar-thumb {
+    background-color: var(--menu-scroll-thumb);
+}

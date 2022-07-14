@@ -1,0 +1,230 @@
+.cont_1 {
+  position: relative;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #9ef1cc;
+  margin: auto;
+}
+.cont_1 > div {
+  width: 40%;
+  background-color: white;
+  margin: 40px;
+  margin-left: 0;
+}
+.cont_1 > div:nth-child(1) {
+  margin-left: 40px;
+}
+.cont_1 img {
+  width: 100%;
+  padding: 25px;
+  transition: 1s;
+}
+.cont_1 img:hover {
+  transform: rotateY(180deg);
+}
+.content {
+  position: relative;
+  top: -130px;
+}
+.cont_2 {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  border-bottom: 3px solid black;
+  justify-content: space-between;
+}
+.cont_2 .left {
+  width: 50%;
+}
+.cont_2 .right {
+  width: 50%;
+  position: relative;
+  padding: 40px;
+  padding-top: 0;
+}
+.cont_2 .left img {
+  width: 100%;
+  padding: 20px;
+}
+.content h4 {
+  text-align: center;
+  margin: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.indent {
+  text-indent: 2em;
+  margin-bottom: 10px;
+  line-height: 25px;
+}
+.cont_2 .button {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.808);
+  background-color: #9ef1cc;
+  padding: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 50px;
+  bottom: 30px;
+}
+.y_1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+@media screen and (max-width: 960px) {
+  .y_1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .cont_1 img {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 910px) {
+  .y_1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 888px) {
+  .y_1 {
+    height: 0;
+  }
+}
+@media screen and (max-width: 888px) {
+  .y_2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 750px) {
+  .y_2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 686px) {
+  .y_2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+}
+.xg .button {
+  right: 30px;
+}
+.xg {
+  border: none;
+}
+footer {
+  position: relative;
+  margin-top: -50px;
+}
+body {
+  background-color: #e8fff57c;
+}
+.content * {
+  color: black;
+}
+.button {
+  cursor: pointer;
+}
+.Secondary_ul > li > a {
+  color: black;
+  background-color: #19d6d3c4;
+}
+.Secondary_ul > li > a:hover {
+  color: rgb(214, 255, 250);
+}
+.trg {
+  width: 10px;
+  position: absolute;
+  border: 10px solid transparent;
+  border-bottom-color: #19d6d3c4;
+  margin: auto;
+}
+.top {
+  background-color: rgb(0, 175, 172);
+}
+footer {
+  background-color: rgb(0, 175, 172);
+}
+footer a {
+  color: white;
+}
+footer div {
+  color: white;
+}
+footer a:hover {
+  color: rgb(14, 211, 185);
+}
+.new_1 a {
+  color: rgb(0, 78, 68);
+}
+.new_1 a:hover {
+  color: rgb(14, 211, 185);
+}
+
+/* 搜索框 */
+.input-group button,
+.input-group input {
+  color: rgb(0, 109, 67);
+  border-color: rgb(0, 109, 67);
+}
+.form-control {
+  -webkit-text-fill-color: rgb(0, 83, 51);
+}
+.form-control::placeholder {
+  color: rgb(0, 109, 67);
+}
+.form-control:focus {
+  border-color: rgba(0, 167, 103, 0.466);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 167, 103, 0.466);
+}
+.input-group .btn-outline-secondary:hover {
+  border-color: rgb(156, 38, 34);
+  background-color: rgba(0, 167, 103, 0.466);
+}
+.input-group .btn:focus {
+  border-color: rgba(0, 167, 103, 0.466);
+}
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-outline-secondary.dropdown-toggle {
+  color: rgb(255, 255, 255);
+  border-color: rgba(0, 136, 84, 0.74);
+  background-color: rgba(0, 119, 73, 0.692);
+}
+.btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
+.btn-outline-secondary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-outline-secondary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 167, 103, 0.466);
+}
+
+/* 点击按钮状态 */
+.btn:focus {
+  color: #fff;
+  background-color: rgba(0, 141, 87, 0.459);
+  box-shadow: 0 0 0 0.2rem rgba(0, 121, 74, 0.466);
+}
+.fixed {
+  background-color: rgba(0, 121, 74, 0.466);
+}
+.return_ {
+  background-color: rgba(0, 121, 74, 0.466);
+}
