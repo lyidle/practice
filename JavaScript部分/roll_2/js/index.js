@@ -155,30 +155,33 @@ function roll(className, imgData, timer, btn_left, btn_right) {
         }
     }
     radio()
-    // 轮播
-    let roll = setInterval(() => {
-            player()
-        }, timer),
-        // 移入清除
-        enter = maxRoll.onmouseenter = function () {
-            clearInterval(roll)
-        },
-        // 移出开始
-        leave = maxRoll.onmouseleave = function () {
-            clearInterval(roll)
-            roll = setInterval(() => {
+    window.addEventListener('DomContentLoaded', function () {
+        // 轮播
+        let roll = setInterval(() => {
                 player()
-            }, timer);
+            }, timer),
+            // 移入清除
+            enter = maxRoll.onmouseenter = function () {
+                clearInterval(roll)
+            },
+            // 移出开始
+            leave = maxRoll.onmouseleave = function () {
+                clearInterval(roll)
+                roll = setInterval(() => {
+                    player()
+                }, timer);
+            }
+        // 失去焦点清除
+        window.onblur = () => {
+            enter()
+            enter()
         }
-    // 失去焦点清除
-    window.onblur = () => {
-        enter()
-        enter()
-    }
-    // 获得焦点开始
-    window.onfocus = () => {
-        leave()
-    }
+        // 获得焦点开始
+        window.onfocus = () => {
+            leave()
+        }
+    })
+
 }
 // 传入参数 类名 图片数据 过渡时间毫秒 左箭头(没写就是空) 右箭头(没写就是空)
 roll('.max-roll', imgData, 1000, '&lt;', '&gt;')
