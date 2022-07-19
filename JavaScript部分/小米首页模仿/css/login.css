@@ -177,6 +177,15 @@ body a {
   border-radius: 5px;
   transition: 0.3s;
 }
+.login form input[type="password"]::-ms-reveal{
+  display: none;
+}
+.login form input[type="password"]::-ms-clear{
+  display: none;
+}
+.login form input[type="password"]::-o-clear{
+  display: none;
+}
 .login form .user,
 .login form .password {
   position: relative;
