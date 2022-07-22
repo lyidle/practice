@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+.list {
+    padding: 0 5px;
+    width: 200px;
+    float: left;
+    position: relative;
+}
+
+.list * {
+    width: 100%;
+}
+.list img{
+    border: 1px rgb(177, 177, 177) solid;
+    padding: 10px;
+    box-sizing: border-box;
+    /* 禁止拖拽 */
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.max {
+    margin: auto;
+    /* 禁止拖拽 */
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+}
