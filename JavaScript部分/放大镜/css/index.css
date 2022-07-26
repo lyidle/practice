@@ -6,12 +6,18 @@ ul {
   padding: 0;
   list-style: none;
 }
+*{
+  box-sizing: border-box;
+}
 .maxScale {
   position: relative;
   width: 700px;
   margin: 50px auto;
+}
+.maxScale,.maxScale img{
   user-select: none;
   -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 .maxScale .smallImg {
   width: 350px;
@@ -19,7 +25,6 @@ ul {
   position: relative;
   overflow: hidden;
   border: 1px solid #bababa;
-  box-sizing: border-box;
 }
 .maxScale .maxImg {
   width: 350px;
@@ -29,7 +34,6 @@ ul {
   top: 0;
   overflow: hidden;
   border: 1px solid #bababa;
-  box-sizing: border-box;
   display: none;
 }
 .maxScale .maxImg img {
@@ -48,14 +52,12 @@ ul {
   width: 80px;
   display: flex;
   align-items: center;
-  box-sizing: border-box;
 }
 .maxScale .list > li {
   width: 60px;
   height: 60px;
   display: flex;
   align-items: center;
-  box-sizing: border-box;
   margin-right: 10px;
 }
 .maxScale .list > li.active {

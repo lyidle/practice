@@ -100,8 +100,8 @@ function scale(Data, maxBox, parent) {
         top:${y}px;
         `
             maxImgs.style.cssText += `
-        left:${-x*(maxImgs.offsetWidth/this.offsetWidth)}px;
-        top:${-y*(maxImgs.offsetWidth/this.offsetWidth)}px;
+        left:${(x*(this.offsetWidth-maxImgs.offsetWidth))/(this.offsetWidth -span.offsetWidth)}px;
+        top:${(y*(this.offsetWidth-maxImgs.offsetWidth))/(this.offsetWidth -span.offsetHeight)}px;
         `
         }
     }
