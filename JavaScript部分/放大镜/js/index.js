@@ -99,7 +99,6 @@ function scale(Data, maxBox, parent) {
         left:${x}px;
         top:${y}px;
         `
-        console.log(maxImgs.offsetWidth,this.offsetWidth);
             maxImgs.style.cssText += `
         left:${-((x*(maxImgs.offsetWidth-this.offsetWidth))/(this.offsetWidth -span.offsetWidth))}px;
         top:${-((y*(maxImgs.offsetWidth-this.offsetWidth))/(this.offsetWidth -span.offsetHeight))}px;
