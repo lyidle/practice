@@ -19,6 +19,7 @@ let snakeSize = 20;
     }
 
     function scopeSize() {
+        scope.style.width='100%'
         // 因为开启了怪异盒子所以加上border宽度值 左右两个
         let borderWidth=parseFloat(getComputedStyle(scope).borderWidth) *2
         scope.style = `
