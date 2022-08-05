@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+.maxBox {
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+
+    * {
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .head {
+        text-align: center;
+
+        span {
+            display: inline-block;
+            margin: 10px;
+            margin-left: 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            i {
+                font-style: normal;
+                margin-left: .5em;
+                color: rgb(66, 66, 66);
+
+                &[class=score] {
+                    color: rgb(255, 119, 0);
+                }
+
+                &[class=status] {
+                    color: rgb(99, 161, 242);
+                }
+            }
+        }
+    }
+
+    .scope {
+        width: 100%;
+        background-color: #eee;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 21;
+        border: 5px solid rgb(149, 199, 247);
+    }
+
+    .menu{
+        position: absolute;
+        width: 50px;
+        top:0;
+        right: -50px;
+    }
+}

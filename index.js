@@ -30,6 +30,7 @@ let date = [{
             'roll_0',
             'roll_1',
             'roll_2',
+            '贪吃蛇'
         ]
     },
     {
