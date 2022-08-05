@@ -114,92 +114,102 @@ function waterfallList(Data) {
     });
     let max = document.querySelector('.max')
     max.appendChild(farg)
-}
-window.onload = () => {
-    waterfall()
-    window.onscroll = () => {
-        if (reload()) {
-            let parent = document.querySelector('.max')
-            // 模拟数据  imgs 可以自定义数据
-            let farg = document.createDocumentFragment()
-            imgs.forEach(val => {
-                let div = document.createElement('div'),
-                    img = document.createElement('img')
-                div.className = 'list'
-                img.src = val.src
-                div.appendChild(img)
-                farg.appendChild(div)
-            });
-            parent.appendChild(farg)
-            // 重新布局
+    let list = max.children
+    let num = 0
+    for (let i = 0; i < list.length; i++) {
+        list[i].children[0].onload = () => {
+            num += 1
+        }
+    }
+    let timer = setInterval(() => {
+        if (num >= list.length) {
             waterfall()
-        }
-    }
-    window.onresize = () => {
-        waterfall()
-    }
-}
-// 第一个父级
-function waterfall() {
-    // 获取父级与子集
-    let wrap = document.querySelector('.max'),
-        item = document.querySelectorAll('.max .list')
-    // 第一个盒子的宽度
-    let boxWidth = item[0].offsetWidth
-    // 可视区域宽度
-    let pagex = document.documentElement.clientWidth
-    // 列数
-    clos = ~~(pagex / boxWidth)
-    // 父盒子居中
-    wrap.style.cssText = `
-    width:${boxWidth*clos}px;
-    margin:0 auto;
-    `
-    // 子元素高度数组  子元素高度 最小子元素高度 最小子元素索引
-    let heightArray = [],
-        itemHeight = 0,
-        minItemHeight = 0,
-        minItemIndex = 0
-    for (i = 0; i < item.length; i++) {
-        itemHeight = item[i].offsetHeight
-        if (i < clos) {
-            // 第一行的高度放到数组里
-            heightArray.push(itemHeight)
-            // 清空第一行的style，防止改变页面时加上
-            item[i].style=''
-        } else {
-            // 超出第一行时
-            // 找出高度最低的元素
-            let arr = [...heightArray]
-            // 最小的高度
-            minItemHeight = arr.sort((a, b) => {
-                return a - b
-            })[0]
-            // 最小盒子的索引
-            minItemIndex = heightArray.indexOf(minItemHeight)
-            // 对应样式
-            item[i].style.position = 'absolute'
-            item[i].style.left = minItemIndex * boxWidth + 'px'
-            item[i].style.top = minItemHeight + 'px'
-            // 更新高度  最小的索引基础上增加 超出第一行后每次进来都是找最小的高度放到那个元素的下面
-            heightArray[minItemIndex] += itemHeight
-        }
-    }
-}
+            window.onscroll = () => {
+                if (reload()) {
+                    let parent = document.querySelector('.max')
+                    // 模拟数据  imgs 可以自定义数据
+                    let farg = document.createDocumentFragment()
+                    imgs.forEach(val => {
+                        let div = document.createElement('div'),
+                            img = document.createElement('img')
+                        div.className = 'list'
+                        img.src = val.src
+                        div.appendChild(img)
+                        farg.appendChild(div)
+                    });
+                    parent.appendChild(farg)
+                    // 重新布局
+                    waterfall()
+                }
+            }
+            window.onresize = () => {
+                waterfall()
+            }
+            // 第一个父级
+            function waterfall() {
+                // 获取父级与子集
+                let wrap = document.querySelector('.max'),
+                    item = document.querySelectorAll('.max .list')
+                // 第一个盒子的宽度
+                let boxWidth = item[0].offsetWidth
+                // 可视区域宽度
+                let pagex = document.documentElement.clientWidth
+                // 列数
+                clos = ~~(pagex / boxWidth)
+                // 父盒子居中
+                wrap.style.cssText = `
+                width:${boxWidth*clos}px;
+                margin:0 auto;
+                `
+                // 子元素高度数组  子元素高度 最小子元素高度 最小子元素索引
+                let heightArray = [],
+                    itemHeight = 0,
+                    minItemHeight = 0,
+                    minItemIndex = 0
+                for (i = 0; i < item.length; i++) {
+                    itemHeight = item[i].offsetHeight
+                    if (i < clos) {
+                        // 第一行的高度放到数组里
+                        heightArray.push(itemHeight)
+                        // 清空第一行的style，防止改变页面时加上
+                        item[i].style = ''
+                    } else {
+                        // 超出第一行时
+                        // 找出高度最低的元素
+                        let arr = [...heightArray]
+                        // 最小的高度
+                        minItemHeight = arr.sort((a, b) => {
+                            return a - b
+                        })[0]
+                        // 最小盒子的索引
+                        minItemIndex = heightArray.indexOf(minItemHeight)
+                        // 对应样式
+                        item[i].style.position = 'absolute'
+                        item[i].style.left = minItemIndex * boxWidth + 'px'
+                        item[i].style.top = minItemHeight + 'px'
+                        // 更新高度  最小的索引基础上增加 超出第一行后每次进来都是找最小的高度放到那个元素的下面
+                        heightArray[minItemIndex] += itemHeight
+                    }
+                }
+            }
 
-// 滚动加载
-function reload() {
-    let item = document.querySelectorAll('.max .list')
-    // 获取滚动条的距离
-    let scrollY = document.documentElement.scrollTop
-    // 可视区域的高度
-    let clientY = document.documentElement.clientHeight
-    // 最后一个盒子距离父级顶部的距离
-    let lastItem = item[item.length - 1]
-    let lastItemY = lastItem.offsetTop
-    // 页面高度
-    let pageHeight = clientY + scrollY
-    document.title = `${lastItemY}---${pageHeight}`
-    // 超过就返回true 没超过就false
-    return lastItemY < pageHeight ? true : false
+            // 滚动加载
+            function reload() {
+                let item = document.querySelectorAll('.max .list')
+                // 获取滚动条的距离
+                let scrollY = document.documentElement.scrollTop
+                // 可视区域的高度
+                let clientY = document.documentElement.clientHeight
+                // 最后一个盒子距离父级顶部的距离
+                let lastItem = item[item.length - 1]
+                let lastItemY = lastItem.offsetTop
+                // 页面高度
+                let pageHeight = clientY + scrollY
+                document.title = `${lastItemY}---${pageHeight}`
+                // 超过就返回true 没超过就false
+                return lastItemY < pageHeight ? true : false
+            }
+            clearInterval(timer)
+        }
+    }, 1000);
 }
