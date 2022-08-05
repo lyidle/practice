@@ -19,17 +19,11 @@ let snakeSize = 20;
     }
 
     function scopeSize() {
-        scope.style.width = '100%'
-        let i = scope.offsetWidth
-        for (; i > 0; i--) {
-            if (i % snakeSize == 0) {
-                i = i
-                break
-            }
-        }
+        // 因为开启了怪异盒子所以加上border宽度值 左右两个
+        let borderWidth=parseFloat(getComputedStyle(scope).borderWidth) *2
         scope.style = `
-            width:${i}px;
-            height:${i}px;
+            width:${~~(scope.offsetWidth/snakeSize) * snakeSize + borderWidth}px;
+            height:${~~(scope.offsetWidth/snakeSize) * snakeSize + borderWidth}px;
         `
     }
     scopeSize()
@@ -222,41 +216,43 @@ let snakeSize = 20;
             // 死亡
             function death() {
                 status.innerHTML = '你死啦~'
-
+                // 停掉定时
                 clearInterval(timer)
-                setTimeout(function () {
-                    if (x < 0) {
-                        let i = this.body.length - 1
-                        for (; i >= 0; i--) {
-                            this.body[i].x += 1
-                        }
-                    } else
-                    if (y < 0) {
-                        let i = this.body.length - 1
-                        for (; i >= 0; i--) {
-                            this.body[i].y += 1
-                        }
-                    } else
-                    if (x > headx) {
-                        let i = this.body.length - 1
-                        for (; i >= 0; i--) {
-                            this.body[i].x -= 1
-                        }
-                    } else
-                    if (y > heady) {
-                        let i = this.body.length - 1
-                        for (; i >= 0; i--) {
-                            this.body[i].y -= 1
-                        }
+                // 改变蛇的位置 不让蛇出去
+                if (x < 0) {
+                    let i = this.body.length - 1
+                    for (; i >= 0; i--) {
+                        this.body[i].x += 1
                     }
-                    SnakeRemove()
-                    snake.init()
-                    setTimeout(() => {
-                        alert('你的分数为:' + fraction)
-                        fraction = 0
-                        gameEnd()
-                    }, 100);
-                }.bind(this), 0);
+                } else
+                if (y < 0) {
+                    let i = this.body.length - 1
+                    for (; i >= 0; i--) {
+                        this.body[i].y += 1
+                    }
+                } else
+                if (x > headx) {
+                    let i = this.body.length - 1
+                    for (; i >= 0; i--) {
+                        this.body[i].x -= 1
+                    }
+                } else
+                if (y > heady) {
+                    let i = this.body.length - 1
+                    for (; i >= 0; i--) {
+                        this.body[i].y -= 1
+                    }
+                }
+                // 清除
+                SnakeRemove()
+                // 初始化
+                snake.init()
+                // 弹出分数  会阻塞后面的代码
+                alert('你的分数为:' + fraction)
+                // 异步 结束游戏函数
+                setTimeout(() => {
+                    gameEnd()
+                }, 0);
             }
             score.innerHTML = fraction
         }
@@ -300,7 +296,7 @@ let snakeSize = 20;
                 // 蛇的初始化
                 this.snake.move(this.food, this.snake)
                 this.snake.init()
-                keyDown=false
+                keyDown = false
             }.bind(this), 500);
         }
         // 键盘事件
@@ -401,6 +397,7 @@ let snakeSize = 20;
         fraction = null
         start.innerHTML = '开始'
         status.innerHTML = '什么都没有'
+        score.innerHTML=0
     }
 })({
     scope,
