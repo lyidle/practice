@@ -7,7 +7,6 @@ let date = [{
             '3D翻盖',
             '精灵图',
             '太极（渐变）',
-            '西游记(animation)',
             '小树（border）',
             'hover与animation',
             '轮播图_checked伪类(含部分js)',
@@ -16,7 +15,7 @@ let date = [{
     {
         title: 'JavaScript部分',
         name: [
-            '表单与王者荣耀02',
+            'iframe标签',
             '节点操作',
             '排序等综合练习',
             '商品价格计算',
@@ -24,12 +23,9 @@ let date = [{
             '拖拽盒子',
             '放大镜',
             '瀑布流',
-            '王者荣耀01',
-            '下拉选择与弹出提示',
+            '王者荣耀',
             '小米首页模仿',
-            'roll_0',
-            'roll_1',
-            'roll_2',
+            'roll',
             '贪吃蛇'
         ]
     },
@@ -40,6 +36,7 @@ let date = [{
         ]
     }
 ]
+// 装填数据
 let div = document.createElement('div'),
     fragment = document.createDocumentFragment()
 div.className = 'sideMin'
@@ -49,11 +46,11 @@ date.forEach((val1, i) => {
     let title = document.createElement('div')
     title.className = 'title'
     title.innerHTML = val1.title
-    val1.name.forEach((val2) => {
+    val1.name.forEach((val) => {
         let li = document.createElement('li')
-        li.innerHTML = val2
+        li.innerHTML = val
         li.onclick = () => {
-            iframe.src = `./${val1.title}/${val2}/index.html`
+            iframe.src = `./${val1.title}/${val}/index.html`
         }
         fragment.appendChild(li)
     })
@@ -61,10 +58,9 @@ date.forEach((val1, i) => {
     div.appendChild(title)
     div.appendChild(ul)
 })
-
+// 点击事件
 let toggle = document.createElement('div')
 toggle.className = 'sideToggle'
-toggle.innerHTML = '>'
 sideMax.appendChild(div)
 sideMax.appendChild(toggle)
 let sideMin = document.querySelector('.sideMin')
@@ -75,6 +71,7 @@ sideToggle.onclick = function () {
     this.classList.toggle('active')
     if (toggle_) {
         toggle_ = false
+        // 移动时移改变iframe的大小
         let windowWidth = document.documentElement.clientWidth
         let sideMinWidth = sideMin.clientWidth
         iframe.style.width = `${windowWidth - sideMinWidth }px`
