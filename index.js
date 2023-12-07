@@ -1,6 +1,7 @@
 let sideMax = document.querySelector('.sideMax')
 let iframe = document.querySelector('.iframeDisplay')
-
+// let url = window.location.href;
+// url=url.replace("index.html","")
 let date = [{
         title: 'Html+Css部分',
         name: [
@@ -51,6 +52,7 @@ date.forEach((val1, i) => {
         li.innerHTML = val
         li.onclick = () => {
             iframe.src = `./${val1.title}/${val}/index.html`
+            // window.location.href=`${url}${val1.title}/${val}/index.html`
         }
         fragment.appendChild(li)
     })

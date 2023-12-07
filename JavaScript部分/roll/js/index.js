@@ -1,5 +1,7 @@
 // 把Array原型上的forEach拿下来给HTMLCollection的原型上添加上
 HTMLCollection.prototype.forEach = Array.prototype.forEach
+// 失去域获取焦点的开关，修复失去焦点后，获取焦点时点击图片轮播播放的bug
+let onIamgeHover=true
 // 数据
 let imgData = [{
         name: 1,
@@ -165,18 +167,26 @@ function roll(className, imgData, timer, btn_left, btn_right) {
         },
         // 移出开始
         leave = maxRoll.onmouseleave = function () {
-            clearInterval(roll)
-            roll = setInterval(() => {
-                player()
-            }, timer);
+            if(onIamgeHover){
+                clearInterval(roll)
+                roll = setInterval(() => {
+                    player()
+                }, timer);
+            }
         }
     // 失去焦点清除
     window.onblur = () => {
-        enter()
+        onIamgeHover=false
         enter()
     }
     // 获得焦点开始
     window.onfocus = () => {
+        // 第一次点击有效清除roll
+        maxRoll.onclick=()=>{
+            clearInterval(roll)
+            maxRoll.onclick=null;
+        }
+        onIamgeHover=true
         leave()
     }
 
